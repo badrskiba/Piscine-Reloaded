@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_foreach.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bskiba <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/04 13:15:50 by bskiba            #+#    #+#             */
-/*   Updated: 2016/11/04 13:45:44 by bskiba           ###   ########.fr       */
+/*   Created: 2016/11/02 18:51:43 by bskiba            #+#    #+#             */
+/*   Updated: 2016/11/02 18:55:22 by bskiba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_foreach(int *tab, int length, void (*f)(int))
+void	ft_putchar(char c);
+
+void	ft_putstr(char *str)
 {
 	int i;
 
 	i = 0;
-	while (i < length)
+	while (str[i] != '\0')
 	{
-		f(tab[i]);
+		ft_putchar(str[i]);
 		i++;
 	}
 }

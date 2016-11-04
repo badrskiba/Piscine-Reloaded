@@ -1,30 +1,14 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
+#    find_sh.sh                                         :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: bskiba <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2016/11/04 14:44:07 by bskiba            #+#    #+#              #
-#    Updated: 2016/11/04 15:19:13 by bskiba           ###   ########.fr        #
+#    Created: 2016/11/02 16:20:15 by bskiba            #+#    #+#              #
+#    Updated: 2016/11/02 20:09:25 by bskiba           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+#!/bin/sh
+find . \( -name '*.sh' \) -print | sed 's/\(.*\)\///g' | sed 's/\.sh//g'
 
-NAME = ft_display_file
-
-SRC = ft_display_file.c
-
-all: $(NAME)
-
-$(NAME):
-	gcc -c -Wall -Werror -Wextra $(SRC)
-	gcc -o $(NAME) ft_display_file.o
-
-clean:
-	/bin/rm -f ft_display_file.o
-
-fclean: clean
-		/bin/rm -f $(NAME)
-
-re:
-	fclean all
